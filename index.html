@@ -6,31 +6,75 @@
     <title>Long live the otters.</title>
     <link rel="icon" href="images/otter.jpg" type="image/jpeg" sizes="16x16">
     <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f4f4f9;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            color: #333;
             text-align: center;
         }
+
         .container {
-            max-width: 1000px;
-            width: 100%;
+            max-width: 700px;
+            width: 90%;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
+
         h1 {
-            font-size: 5rem;
+            font-size: 4rem;
             margin-bottom: 20px;
+            color: #007bff;
+            transition: color 0.3s;
         }
+
+        h1:hover {
+            color: #0056b3;
+        }
+
         select {
-            padding: 8px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            width: 160px;
+            padding: 12px;
+            font-size: 1.2rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            color: #555;
+            transition: border-color 0.3s, background-color 0.3s;
+            cursor: pointer;
+        }
+
+        select:hover {
+            border-color: #007bff;
+            background-color: #e6f7ff;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #0056b3;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            select {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -144,37 +188,37 @@
             el: "Ζήτω οι βίδρες.",
             uk: "Хай живуть видри.",
             ms: "Hidup berang-berang.",
-            ka: "გაუმარჯოს მარსლები.",
-            hy: "Եկեք ապրեն կապիկները.",
+            ka: "გაუმარჯოს ოტერებს.",
+            hy: "Կենդանի մնան ջրացներրը.",
             tl: "Mabuhay ang mga otter.",
-            lv: "Ilgi dzīvo ūdeņdzirnavas.",
-            lt: "Ilgaamžiai vėžiai.",
-            is: "Lifið otturnar.",
-            mt: "Hajjin il-otters.",
-            sq: "Rrojë për shushunjat.",
-            mr: "लोअर च्या दीर्घायुष्य.",
-            ne: "हाथीको दीर्घायुहोस्.",
-            km: "សូមឲ្យត្រីទាំងអស់រស់នៅយូរ.",
-            lo: "ໃຫ້ອາຫານດຳລົດຫົວ.",
-            si: "විදුලි යතුරු දීර්ඝායුක්ත කිරීම.",
-            eu: "Otterrak bizirik egon.",
+            lv: "Lai dzīvo ūdrs.",
+            lt: "Tegyvuoja ūdras.",
+            is: "Lifi oturarnir.",
+            mt: "Ħajjin l-otters.",
+            sq: "Rroftë vidrat.",
+            mr: "लांब जगा ओटर्स.",
+            ne: "ओटर्स लामो समयसम्म बाँचुन्।",
+            km: "អូទែររស់យូរអង្វែង។",
+            lo: "ໃຫ້ໂອເທີດຳລົດຢືນຍາວ.",
+            si: "ඔටර්ස් දිගුකල් ජීවත්වේවා.",
+            eu: "Bizi daitezela otarrak.",
             gl: "Vivan as lontras.",
-            cy: "Bydd bywyd hir i'r otters.",
+            cy: "Bydded bywyd hir i'r dyfrgwn.",
             af: "Lang lewe die otters.",
-            pa: "ਓਟਟਰਜ਼ ਦੀ ਲੰਬੀ ਉਮਰ ਹੋਵੇ.",
-            gu: "લાંબી વય ધરાવતી ઓટર્સ.",
-            ta: "ஒட்டர்கள் வாழ்க.",
-            te: "ఓటర్ల దీర్ఘాయువు.",
-            ml: "ഓട്ടറുകൾ ജീവിക്കട്ടെ.",
-            or: "ଦୀର୍ଘାୟୁ ହେଉ ଓଟର୍ସ.",
-            as: "দীৰ୍ଘায়ু হক অটাৰ্ছ.",
-            sd: "اوٽرس جي عمر وڌي وڃي.",
-            kk: "Құлақшалардың ұзақ өмір сүруі.",
-            uz: "Baland qirralar uzok umr ko‘rsin.",
-            tk: "Su samurlary uzak ömri bolsun.",
-            mn: "Тамирчидын уртсан нас живхэдэг.",
-            ps: "راټنر د اوږده ژوند په څیر ژوند وکړي.",
-            az: "Suda yaşayan otterlər uzun ömürlü olsun."
+            pa: "ਓਟਰਜ਼ ਨੂੰ ਲੰਬੀ ਉਮਰ ਹੋਵੇ.",
+            gu: "ઓટર્સ લાંબા સમય સુધી જીવતા રહે.",
+            ta: "ஒட்டர்கள் நீண்ட நாள் வாழ்க.",
+            te: "ఓటర్స్ దీర్ఘ కాలం జీవించండి.",
+            ml: "ഓട്ടറുകൾ ദീർഘായുസ്സ് ഉള്ളവരായിരിക്കുക.",
+            or: "ଓଟରସ୍ ଦୀର୍ଘାୟୁ ହେଉ।",
+            as: "অটাৰ্ছৰ দীঘলজীৱন হওক।",
+            sd: "اوٽرس کي ڊگهي زندگي ملي.",
+            kk: "Выдралар ұзақ өмір сүрсін.",
+            uz: "Qayiqlarning uzoq umri bo'lsin.",
+            tk: "Su samyrlarynyñ uzak ömri bolsun.",
+            mn: "Оттор урт насалтугай.",
+            ps: "اوټرونه دې اوږد ژوند وکړي.",
+            az: "Uzun ömürlü otterlərə yaşayın."
         };
 
         function switchLanguage() {
