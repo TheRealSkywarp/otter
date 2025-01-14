@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="en"> <!-- Langue par défaut : Anglais -->
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Long live the otters.</title> <!-- Titre par défaut -->
-    <!-- Favicon local -->
+    <title>Long live the otters.</title>
     <link rel="icon" href="images/loutre.jpg" type="image/jpeg" sizes="16x16">
     <style>
         body {
@@ -18,11 +17,11 @@
             text-align: center;
         }
         .container {
-            max-width: 600px;
+            max-width: 1000px;
             width: 100%;
         }
         h1 {
-            font-size: 3rem;
+            font-size: 5rem;
             margin-bottom: 20px;
         }
         select {
@@ -31,11 +30,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-bottom: 20px;
-            width: 160px; /* Réduit la largeur du sélecteur de langue */
-        }
-        #icon {
-            width: 100px;
-            margin-top: 20px;
+            width: 160px;
         }
     </style>
 </head>
@@ -50,7 +45,8 @@
             <option value="it">Italiano</option>
             <option value="pt">Português</option>
             <option value="ar">العربية</option>
-            <option value="zh">中文</option>
+            <option value="zh">中文</option> <!-- Chinois - Mandarin -->
+            <option value="zh-traditional">繁體中文</option> <!-- Chinois Traditionnel -->
             <option value="ru">Русский</option>
             <option value="ja">日本語</option>
             <option value="ko">한국어</option>
@@ -65,7 +61,6 @@
             <option value="sv">Svenska</option>
             <option value="da">Dansk</option>
             <option value="no">Norsk</option>
-            <option value="fi">Suomi</option>
             <option value="cs">Čeština</option>
             <option value="hu">Magyar</option>
             <option value="sk">Slovenčina</option>
@@ -78,9 +73,38 @@
             <option value="el">Ελληνικά</option>
             <option value="uk">Українська</option>
             <option value="ms">Melayu</option>
-            <!-- Ajoutez d'autres langues ici -->
+            <option value="ka">ქართული</option> <!-- Géorgien -->
+            <option value="hy">Հայերեն</option> <!-- Arménien -->
+            <option value="tl">Tagalog</option> <!-- Filipino -->
+            <option value="lv">Latviešu</option> <!-- Letton -->
+            <option value="lt">Lietuvių</option> <!-- Lituanien -->
+            <option value="is">Íslenska</option> <!-- Islandais -->
+            <option value="mt">Malti</option> <!-- Maltais -->
+            <option value="sq">Shqip</option> <!-- Albanais -->
+            <option value="mr">मराठी</option> <!-- Marathi -->
+            <option value="ne">नेपाली</option> <!-- Népali -->
+            <option value="km">ភាសាខ្មែរ</option> <!-- Khmer -->
+            <option value="lo">ລາວ</option> <!-- Laotien -->
+            <option value="si">සිංහල</option> <!-- Sinhala -->
+            <option value="eu">Euskara</option> <!-- Basque -->
+            <option value="gl">Galego</option> <!-- Galicien -->
+            <option value="cy">Cymraeg</option> <!-- Gallois -->
+            <option value="af">Afrikaans</option> <!-- Afrikaans -->
+            <option value="pa">ਪੰਜਾਬੀ</option> <!-- Pendjabi -->
+            <option value="gu">ગુજરાતી</option> <!-- Gujarati -->
+            <option value="ta">தமிழ்</option> <!-- Tamoul -->
+            <option value="te">తెలుగు</option> <!-- Télougou -->
+            <option value="ml">മലയാളം</option> <!-- Malayalam -->
+            <option value="or">ଓଡ଼ିଆ</option> <!-- Odia -->
+            <option value="as">অসমীয়া</option> <!-- Assamese -->
+            <option value="sd">سنڌي</option> <!-- Sindhi -->
+            <option value="kk">Қазақ тілі</option> <!-- Kazakh -->
+            <option value="uz">O‘zbekcha</option> <!-- Ouzbek -->
+            <option value="tk">Türkmençe</option> <!-- Turkmène -->
+            <option value="mn">Монгол</option> <!-- Mongol -->
+            <option value="ps">پښتو</option> <!-- Pashto -->
+            <option value="az">Azərbaycanca</option> <!-- Azerbaïdjanais -->
         </select>
-        <img id="icon" src="images/loutre.jpg" alt="Loutre">
     </div>
 
     <script>
@@ -93,11 +117,12 @@
             pt: "Viva as lontras.",
             ar: "عاشت القنادس.",
             zh: "长寿水獺。",
+            'zh-traditional': "長壽水獺。",
             ru: "Да здравствуют выдры.",
             ja: "カワウソ万歳。",
             ko: "수달 만세.",
-            hi: "बिल्लियाँ ज़िंदाबाद।",
-            bn: "সুন্দর জলপানির প্রাণী উঁচু জীবন",
+            hi: "बिल्लियाँ ज़िंदाबाद。",
+            bn: "সুন্দর জলপানির প্রাণী উঁচু जीवन",
             tr: "Su samurları yaşasın.",
             id: "Hidup berang-berang.",
             sw: "Mbusu zaishi.",
@@ -119,6 +144,37 @@
             el: "Ζήτω οι βίδρες.",
             uk: "Хай живуть видри.",
             ms: "Hidup berang-berang.",
+            ka: "გაუმარჯოს მარსლები.", // Géorgien
+            hy: "Եկեք ապրեն կապիկները.", // Arménien
+            tl: "Mabuhay ang mga otter.", // Filipino
+            lv: "Ilgi dzīvo ūdeņdzirnavas.", // Letton
+            lt: "Ilgaamžiai vėžiai.", // Lituanien
+            is: "Lifið otturnar.", // Islandais
+            mt: "Hajjin il-otters.", // Maltais
+            sq: "Rrojë për shushunjat.", // Albanais
+            mr: "लोअर च्या दीर्घायुष्य." , // Marathi
+            ne: "हाथीको दीर्घायुहोस्।", // Népali
+            km: "សូមឲ្យត្រីទាំងអស់រស់នៅយូរ", // Khmer
+            lo: "ໃຫ້ອາຫານດຳລົດຫົວ", // Laotien
+            si: "විදුලි යතුරු දීර්ඝායුක්ත කිරීම", // Sinhala
+            eu: "Otterrak bizirik egon!", // Basque
+            gl: "Vivan as lontras.", // Galicien
+            cy: "Bydd bywyd hir i'r otters.", // Gallois
+            af: "Lang lewe die otters.", // Afrikaans
+            pa: "ਓਟਟਰਜ਼ ਦੀ ਲੰਬੀ ਉਮਰ ਹੋਵੇ", // Pendjabi
+            gu: "લાંબી વય ધરાવતી ઓટર્સ", // Gujarati
+            ta: "ஒட்டர்கள் வாழ்க!", // Tamoul
+            te: "ఓటర్ల దీర్ఘాయువు", // Télougou
+            ml: "ഓട്ടറുകൾ ജീവിക്കട്ടെ", // Malayalam
+            or: "ଦୀର୍ଘାୟୁ ହେଉ ଓଟର୍ସ", // Odia
+            as: "দীৰ্ঘায়ু হক অটাৰ্ছ", // Assamese
+            sd: "اوٽرس جي عمر وڌي وڃي", // Sindhi
+            kk: "Құлақшалардың ұзақ өмір сүруі", // Kazakh
+            uz: "Baland qirralar uzok umr ko‘rsin", // Ouzbek
+            tk: "Su samurlary uzak ömri bolsun", // Turkmène
+            mn: "Тамирчидын уртсан нас живхэдэг", // Mongol
+            ps: "راټنر د اوږده ژوند په څیر ژوند وکړي", // Pashto
+            az: "Suda yaşayan otterlər uzun ömürlü olsun", // Azerbaïdjanais
         };
 
         function switchLanguage() {
@@ -126,10 +182,7 @@
             const textElement = document.getElementById("text");
             const titleElement = document.querySelector("title");
 
-            // Mise à jour du texte de la page
             textElement.innerText = translations[lang];
-
-            // Mise à jour du titre de la page
             titleElement.innerText = translations[lang];
         }
     </script>
