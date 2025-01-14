@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch de Langue - Vive les Loutres</title>
+    <!-- Favicon -->
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/1/1b/Sea_otter_%28Enhydra_lutris%29.jpg" type="image/jpeg" sizes="16x16">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        select {
+            padding: 10px;
+            font-size: 1.2rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        #icon {
+            width: 100px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="text">Vive les loutres.</h1>
+        <select id="languageSwitch" onchange="switchLanguage()">
+            <option value="fr">Français</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="de">Deutsch</option>
+            <option value="it">Italiano</option>
+            <option value="pt">Português</option>
+            <option value="ar">العربية</option>
+            <option value="zh">中文</option>
+            <option value="ru">Русский</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="hi">हिंदी</option>
+            <option value="bn">বাংলা</option>
+            <option value="tr">Türkçe</option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="sw">Kiswahili</option>
+            <option value="pl">Polski</option>
+            <option value="fi">Suomi</option>
+            <!-- Ajoutez d'autres langues ici -->
+        </select>
+        <img id="icon" src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Sea_otter_%28Enhydra_lutris%29.jpg" alt="Loutre">
+    </div>
+
+    <script>
+        const translations = {
+            fr: "Vive les loutres.",
+            en: "Long live the otters.",
+            es: "Vivan las nutrias.",
+            de: "Es leben die Otter.",
+            it: "Viva le lontre.",
+            pt: "Viva as lontras.",
+            ar: "عاشت القنادس.",
+            zh: "长寿水獺。",
+            ru: "Да здравствуют выдры.",
+            ja: "カワウソ万歳。",
+            ko: "수달 만세.",
+            hi: "बिल्लियाँ ज़िंदाबाद।",
+            bn: "সুন্দর জলপানির প্রাণী উঁচু জীবন",
+            tr: "Su samurları yaşasın.",
+            id: "Hidup berang-berang.",
+            sw: "Mbusu zaishi.",
+            pl: "Niech żyją wydry.",
+            fi: "Otterit elävät.",
+            // Ajoutez plus de traductions ici
+        };
+
+        function switchLanguage() {
+            const lang = document.getElementById("languageSwitch").value;
+            document.getElementById("text").innerText = translations[lang];
+        }
+    </script>
+</body>
+</html>
