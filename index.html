@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Long live the otters.</title>
+    <title id="pageTitle">Long live the otters.</title>
     <link rel="icon" href="images/otter.jpg" type="image/jpeg" sizes="16x16">
     <style>
-        /* General reset */
         * {
             margin: 0;
             padding: 0;
@@ -20,7 +19,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
             color: #333;
             text-align: center;
         }
@@ -37,15 +36,16 @@
         h1 {
             font-size: 4rem;
             margin-bottom: 20px;
-            color: #007bff;
+            color: #d96459;
             transition: color 0.3s;
         }
 
         h1:hover {
-            color: #0056b3;
+            color: #c43d34;
         }
 
         select {
+            margin-top: 20px;
             padding: 12px;
             font-size: 1.2rem;
             border: 2px solid #ddd;
@@ -56,15 +56,25 @@
             cursor: pointer;
         }
 
-        select:hover {
-            border-color: #007bff;
-            background-color: #e6f7ff;
+        select:hover, select:focus {
+            border-color: #d96459;
+            background-color: #ffe5e0;
         }
 
-        select:focus {
-            outline: none;
-            border-color: #0056b3;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        footer a {
+            color: #d96459;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #c43d34;
         }
 
         @media (max-width: 768px) {
@@ -81,7 +91,7 @@
 <body>
     <div class="container">
         <h1 id="text">Long live the otters.</h1>
-        <select id="languageSwitch" onchange="switchLanguage()">
+        <select id="languageSwitch" onchange="switchLanguage()" onblur="resetDropdown()">
             <option value="en">English</option>
             <option value="fr">Français</option>
             <option value="es">Español</option>
@@ -149,6 +159,9 @@
             <option value="ps">پښتو</option>
             <option value="az">Azərbaycanca</option>
         </select>
+        <footer>
+            Made with ❤️ by <a href="https://github.com/TheRealSkywarp" target="_blank">Skywarp</a>
+        </footer>        
     </div>
 
     <script>
@@ -177,55 +190,61 @@
             da: "Længe leve bæltedyr.",
             no: "Leve otterne.",
             cs: "Ať žijí vydry.",
-            hu: "Éljenek a vidrák.",
+            hu: "Éljenek a vidrák!",
             sk: "Nech žijú vydry.",
             ro: "Trăiască vidrele.",
-            hr: "Živjele vidre.",
+            hr: "Neka žive vidre.",
             bg: "Да живеят видрите.",
-            sr: "Живеле видре.",
-            th: "ขอให้บีเวอร์มีชีวิตยืนยาว.",
-            vi: "Chúc cho loài rái cá sống lâu.",
+            sr: "Нека живе видре.",
+            th: "ขอให้บีเวอร์มีชีวิตยืนยาว",
+            vi: "Chúc những con rái cá sống lâu.",
             el: "Ζήτω οι βίδρες.",
-            uk: "Хай живуть видри.",
+            uk: "Нехай живуть видри.",
             ms: "Hidup berang-berang.",
-            ka: "გაუმარჯოს ოტერებს.",
-            hy: "Կենդանի մնան ջրացներրը.",
+            ka: "მოგვირგვინდეს ბრუნდები.",
+            hy: "Թշնամի բառերի մասին խոսելու համար պահանջվող լեզու",
             tl: "Mabuhay ang mga otter.",
-            lv: "Lai dzīvo ūdrs.",
-            lt: "Tegyvuoja ūdras.",
-            is: "Lifi oturarnir.",
-            mt: "Ħajjin l-otters.",
-            sq: "Rroftë vidrat.",
-            mr: "लांब जगा ओटर्स.",
-            ne: "ओटर्स लामो समयसम्म बाँचुन्।",
-            km: "អូទែររស់យូរអង្វែង។",
-            lo: "ໃຫ້ໂອເທີດຳລົດຢືນຍາວ.",
-            si: "ඔටර්ස් දිගුකල් ජීවත්වේවා.",
-            eu: "Bizi daitezela otarrak.",
-            gl: "Vivan as lontras.",
-            cy: "Bydded bywyd hir i'r dyfrgwn.",
-            af: "Lang lewe die otters.",
-            pa: "ਓਟਰਜ਼ ਨੂੰ ਲੰਬੀ ਉਮਰ ਹੋਵੇ.",
-            gu: "ઓટર્સ લાંબા સમય સુધી જીવતા રહે.",
-            ta: "ஒட்டர்கள் நீண்ட நாள் வாழ்க.",
-            te: "ఓటర్స్ దీర్ఘ కాలం జీవించండి.",
-            ml: "ഓട്ടറുകൾ ദീർഘായുസ്സ് ഉള്ളവരായിരിക്കുക.",
-            or: "ଓଟରସ୍ ଦୀର୍ଘାୟୁ ହେଉ।",
-            as: "অটাৰ্ছৰ দীঘলজীৱন হওক।",
-            sd: "اوٽرس کي ڊگهي زندگي ملي.",
-            kk: "Выдралар ұзақ өмір сүрсін.",
-            uz: "Qayiqlarning uzoq umri bo'lsin.",
-            tk: "Su samyrlarynyñ uzak ömri bolsun.",
-            mn: "Оттор урт насалтугай.",
-            ps: "اوټرونه دې اوږد ژوند وکړي.",
-            az: "Uzun ömürlü otterlərə yaşayın."
+            lv: "Ilgi dzīvo ūdensbāzes.",
+            lt: "Ilgai gyvuotų vėžiai.",
+            is: "Lengi lifið otturnar.",
+            mt: "Hajja ħajja sħiħa lill-otter.",
+            sq: "Jetë të gjatë vidra.",
+            mr: "लांब जिवंत असलेल्या ओटर्स",
+            ne: "लामो जीवन ओटरहरूको",
+            km: "ខ្លាឃ្លាររួមចំណែកជាមួយកំណត់",
+            lo: "ເຄືອກຫັນດີເປັນສິດ",
+            si: "ඔටර්ගා ලස්සන කුහුඹු වන හැමෝම",
+            eu: "Bizitzaren gauza guztiënd",
+            gl: "Viva os otters.",
+            cy: "Ffwl o fwyd gwallgofn.",
+            af: "Long live the otters in big regions.",
+            pa: "ਨਦੀਆਂ ਲਈ ਯੋਜਨਾ ਦੇ ਟੇਲਕਿੰਗ",
+            gu: "જલાવિદ્ર  તેઓ long",
+            ta: "நீர் பகுதி விசாரணைகளை",
+            te: "తిత్తి యొక్క చెలిమి జీవించండి.",
+            ml: "ഒറ്ററുകൾക്ക് ജീവിച്ചിരിക്കുക.",
+            or: "ଓଟର ଜୀବିତ ରୁହନ୍ତୁ.",
+            as: "অটাৰবোৰৰ দীঘলায়ু হওক।",
+            sd: "اوٽرز جي زندگي ۾ ڊگھي ٿئي.",
+            kk: "Қиыртқылар өмір сүрсін.",
+            uz: "Su samurlari yashasin.",
+            tk: "Suw samurlary ýaşasyn.",
+            mn: "Усны мичи амьд байг.",
+            ps: "د اوټري ژوند اوږد شي.",
+            az: "Sui samurları yaşıyır.",
         };
-
+    
         function switchLanguage() {
             const language = document.getElementById("languageSwitch").value;
-            document.getElementById("text").innerText = translations[language];
-            document.title = translations[language]; // Met à jour le titre de la page
+            const text = translations[language];
+            document.getElementById("text").textContent = text;
+            document.title = text;
         }
-    </script>
-</body>
-</html>
+    
+        document.addEventListener("click", function (e) {
+            const selectElement = document.getElementById("languageSwitch");
+            if (!selectElement.contains(e.target)) {
+                return;
+            }
+        });
+    </script>    
