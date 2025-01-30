@@ -4,97 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="pageTitle">Long live the otters!</title>
-    <link rel="icon" href="images/otter.jpg" type="image/jpeg" sizes="16x16">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #8B5A2B, #A0522D);
-            color: #F5F5DC;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 700px;
-            width: 90%;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            color: #FFD700;
-            transition: color 0.3s;
-            text-align: center;
-        }
-
-        h1:hover {
-            color: #FFA500;
-        }
-
-        select {
-            margin-top: 20px;
-            padding: 12px;
-            font-size: 1.2rem;
-            border: 2px solid #A0522D;
-            border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.2);
-            color: #333;
-            transition: border-color 0.3s, background-color 0.3s;
-            cursor: pointer;
-        }
-
-        select:hover, select:focus {
-            border-color: #FFD700;
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-
-        footer {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: #F5F5DC;
-            text-align: center;
-        }
-
-        footer a {
-            color: #FFD700;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        footer a:hover {
-            color: #FFA500;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            select {
-                font-size: 1rem;
-            }
-        }
-    </style>
+    <link rel="icon" href="pictures/otter.jpg" type="image/jpeg" sizes="16x16">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1 id="text">Long live the otters!</h1>
-        <select id="languageSwitch" onchange="switchLanguage()" onblur="resetDropdown()">
+        <select id="languageSwitch" onchange="switchLanguage()">
             <option value="en">English</option>
             <option value="fr">Français</option>
             <option value="es">Español</option>
@@ -118,7 +34,6 @@
             <option value="sv">Svenska</option>
             <option value="da">Dansk</option>
             <option value="no">Norsk</option>
-            <option value="ga">Gaeilge</option>
             <option value="cs">Čeština</option>
             <option value="hu">Magyar</option>
             <option value="sk">Slovenčina</option>
@@ -167,101 +82,6 @@
             Made with ❤️ by <a href="https://github.com/TheRealSkywarp" target="_blank">Skywarp</a>
         </footer>        
     </div>
-
-    <script>
-        const translations = {
-            en: "Long live the otters!",
-            fr: "Vive les loutres!",
-            es: "¡Vivan las nutrias!",
-            de: "Es leben die Otter!",
-            it: "Viva le lontre!",
-            pt: "Viva as lontras!",
-            ar: "تحيا ثعالب الماء!",
-            zh: "水獭万岁！",
-            'zh-traditional': "水獺萬歲！",
-            ru: "Да здравствуют выдры!",
-            ja: "カワウソ万歳！",
-            ko: "수달 만세!",
-            hi: "लाउटरों की जय हो!",
-            bn: "নদী শূকরদের দীর্ঘায়ু হোক!",
-            tr: "Su samurları yaşasın!",
-            id: "Hidup berang-berang!",
-            sw: "Mbusu zaishi!",
-            pl: "Niech żyją wydry!",
-            fi: "Eläköön saukot!",
-            nl: "Lang leve de otters!",
-            sv: "Länge leve uttrarna!",
-            da: "Længe leve odderene!",
-            no: "Lenge leve oterne!",
-            ga: "Go maire sibh na dobharchú!",
-            cs: "Ať žijí vydry!",
-            hu: "Éljenek a vidrák!",
-            sk: "Nech žijú vydry!",
-            ro: "Trăiască vidrele!",
-            hr: "Neka žive vidre!",
-            bg: "Да живеят видрите!",
-            sr: "Нека живе видре!",
-            th: "ขอให้บีเวอร์มีชีวิตยืนยาว!",
-            vi: "Chúc những con rái cá sống lâu!",
-            el: "Ζήτω οι βίδρες!",
-            uk: "Нехай живуть видри!",
-            ms: "Hidup berang-berang!",
-            ka: "მოგვირგვინდეს ბრუნდები!",
-            hy: "Թշնամի բառերի մասին խոսելու համար պահանջվող լեզու!",
-            tl: "Mabuhay ang mga otter!",
-            lv: "Ilgi dzīvo ūdensbāzes!",
-            lt: "Ilgai gyvuotų vėžiai!",
-            is: "Lengi lifið otturnar!",
-            mt: "Hajja ħajja sħiħa lill-otter!",
-            sq: "Jetë të gjatë vidra!",
-            mr: "लांब जिवंत असलेल्या ओटर्स!",
-            ne: "लामो जीवन ओटरहरूको!",
-            km: "ខ្លាឃ្លាររួមចំណែកជាមួយកំណត់!",
-            lo: "ເຄືອກຫັນດີເປັນສິດ!",
-            si: "ඔටර්ගා ලස්සන කුහුඹු වන හැමෝම!",
-            eu: "Bizitzaren gauza guztiënd!",
-            gl: "Viva os otters!",
-            cy: "Ffwl o fwyd gwallgofn!",
-            af: "Lank lewe die otters!",
-            pa: "ਨਦੀਆਂ ਲਈ ਯੋਜਨਾ ਦੇ ਟੇਲਕਿੰਗ!",
-            gu: "જલાવિદ્ર  તેઓ long!",
-            ta: "நீர் பகுதி விசாரணைகளை!",
-            te: "తిత్తి యొక్క చెలిమి జీవించండి!",
-            ml: "ഒറ്ററുകൾക്ക് ജീവിച്ചിരിക്കുക!",
-            or: "ଓଟର ଜୀବିତ ରୁହନ୍ତୁ!",
-            as: "অটাৰবোৰৰ দীঘলায়ু হওক!",
-            sd: "اوٽرز جي زندگي ۾ ڊگھي ٿئي!",
-            kk: "Қиыртқылар өмір сүрсін!",
-            uz: "Su samurlari yashasin!",
-            tk: "Suw samurlary ýaşasyn!",
-            mn: "Усны мичи амьд байг!",
-            ps: "د اوټرو ژوند وکړئ!",
-            az: "Sui samurları yaşıyır!"
-        };
-
-        const rtlLanguages = ["ar", "he", "fa", "ur"];
-
-        function switchLanguage() {
-            const language = document.getElementById("languageSwitch").value;
-            const text = translations[language];
-            const textElement = document.getElementById("text");
-
-            textElement.textContent = text;
-            document.title = text;
-
-            if (rtlLanguages.includes(language)) {
-                textElement.style.direction = "rtl";
-            } else {
-                textElement.style.direction = "ltr";
-            }
-        }
-
-        document.addEventListener("click", function (e) {
-            const selectElement = document.getElementById("languageSwitch");
-            if (!selectElement.contains(e.target)) {
-                return;
-            }
-        });
-    </script>     
+    <script src="script.js"></script>
 </body>
 </html>
