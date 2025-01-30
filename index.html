@@ -236,14 +236,28 @@
             ps: "د اوټرو ژوند وکړئ!",
             az: "Sui samurları yaşıyır!"
         };
-    
+
+        // Liste des langues RTL
+        const rtlLanguages = ["ar", "he", "fa", "ur"]; // Ajoutez d'autres langues RTL si nécessaire
+
         function switchLanguage() {
             const language = document.getElementById("languageSwitch").value;
             const text = translations[language];
-            document.getElementById("text").textContent = text;
+            const textElement = document.getElementById("text");
+
+            textElement.textContent = text;
             document.title = text;
+
+            // Appliquer la direction RTL si nécessaire
+            if (rtlLanguages.includes(language)) {
+                textElement.style.direction = "rtl";
+                textElement.style.textAlign = "right";
+            } else {
+                textElement.style.direction = "ltr";
+                textElement.style.textAlign = "left";
+            }
         }
-    
+
         document.addEventListener("click", function (e) {
             const selectElement = document.getElementById("languageSwitch");
             if (!selectElement.contains(e.target)) {
