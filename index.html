@@ -39,6 +39,7 @@
             margin-bottom: 20px;
             color: #FFD700;
             transition: color 0.3s;
+            text-align: center;
         }
 
         h1:hover {
@@ -66,6 +67,7 @@
             margin-top: 20px;
             font-size: 0.9rem;
             color: #F5F5DC;
+            text-align: center;
         }
 
         footer a {
@@ -237,8 +239,7 @@
             az: "Sui samurları yaşıyır!"
         };
 
-        // Liste des langues RTL
-        const rtlLanguages = ["ar", "he", "fa", "ur"]; // Ajoutez d'autres langues RTL si nécessaire
+        const rtlLanguages = ["ar", "he", "fa", "ur"];
 
         function switchLanguage() {
             const language = document.getElementById("languageSwitch").value;
@@ -248,13 +249,10 @@
             textElement.textContent = text;
             document.title = text;
 
-            // Appliquer la direction RTL si nécessaire
             if (rtlLanguages.includes(language)) {
                 textElement.style.direction = "rtl";
-                textElement.style.textAlign = "right";
             } else {
                 textElement.style.direction = "ltr";
-                textElement.style.textAlign = "left";
             }
         }
 
